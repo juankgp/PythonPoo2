@@ -18,6 +18,8 @@ def crearBDD():
     else:
         print("La tabla empleado se a creado satisfactoriamente")
 
+
+}
     try :
         cursor.execute('''CREATE TABLE prestamo(
             pre_codigo integer primary key autoincrement,
