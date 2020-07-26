@@ -83,7 +83,6 @@ def agregarPrestamo():
         print("Registro '{}' creado correctamente".format(pempleado))
     conexion.commit()
     conexion.close()
-    
 
 ##llamar a metodo crear bd
 crearBDD()
