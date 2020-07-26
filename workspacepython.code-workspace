@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "poo2",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ejerciciosSql",
+		"git.ignoreLimitWarning": true
+	}
+}
