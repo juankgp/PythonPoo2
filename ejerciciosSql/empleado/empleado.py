@@ -16,9 +16,7 @@ def crearBDD():
     except sqlite3.OperationalError:
         print("La tabla ya existe")
     else:
-        print("La tabla empleado se a creado satisfactoriamente")
-
-
+        print("La tabla empleado se a creado satisfactoriamente")z
 
     try :
         cursor.execute('''CREATE TABLE prestamo(
@@ -84,6 +82,25 @@ def agregarPrestamo():
     conexion.commit()
     conexion.close()
 
+def consulta():
+    conexion = sqlite3.connect("empleado.db")
+    cursor = conexion.cursor()
+    vempleado = cursor.execute("select * from empleado").fetchall()
+
+    for emp in vempleado:
+        print("Nombres: " + emp[1])
+        print("Apellidos: " + emp[2])
+        print("Cedula: " + emp[3])
+        print("Edad: " + str(emp[4]))
+        
+        vprestamo = cursor.execute("select * from prestamo where emp_codigo={}".format(emp[0])).fetchall()
+
+        for pres in vprestamo:
+            print("Valor: {} ".format(pres[2]))
+            print("Plazo: {}".format(pres[3]))
+    conexion.commit()
+    conexion.close()    
+        
 ##llamar a metodo crear bd
 crearBDD()
 while True:
@@ -98,5 +115,6 @@ while True:
         agregarEmpleado()
     if opcion == '2':
         agregarPrestamo()
-        
+    if opcion == '3':
+        consulta()
         
