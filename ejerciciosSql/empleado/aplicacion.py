@@ -25,11 +25,39 @@ class Aplicacion:
         self.archivo.add_command(label="Crear base de Datos",command=self.crearBDD)
         self.archivo.add_command(label="Salir",command=self.Salir)
         #########Sitemas############33
-        #elf.sistemaM.add_command(labe="Formulario Empleados",command=self.formEmpleados)
+        self.sistemaM.add_command(labe="Formulario Empleados",command=self.formEmpleados)
         ################################# Menus ###############################3
         self.menubar1.add_cascade(label="Archivo",menu=self.archivo)#creo el menu archivo
         self.menubar1.add_cascade(label="Sistemas",menu=self.sistemaM)#creo el menu archivo
     
+    def formEmpleados(self):
+        frame = tk.Frame(self.ventana1)
+        frame.pack()
+        self.emp_codigo = tk.StringVar()
+        self.emp_nombres = tk.StringVar()
+        self.emp_apellidos = tk.StringVar()
+        self.emp_cedula = tk.StringVar()
+        self.emp_edad = tk.IntVar()
+        self.emp_estado = tk.StringVar()
+
+        cuadroID = tk.Entry(frame,textvariable=self.emp_codigo)
+        cuadroID.grid(row=0,column=1,padx=10,pady = 10)
+
+        cuadroNombre = tk.Entry(frame,textvariable=self.emp_nombres)
+        cuadroNombre.grid(row=1,column=1,padx=10,pady = 10)
+
+        cuadroApellido = tk.Entry(frame,textvariable=self.emp_apellidos)
+        cuadroApellido.grid(row=2,column=1,padx=10,pady = 10)
+
+        cuadroCedula = tk.Entry(frame,textvariable=self.emp_cedula)
+        cuadroCedula.grid(row=3,column=1,padx=10,pady = 10)
+
+        cuadroEdad = tk.Entry(frame,textvariable=self.emp_edad)
+        cuadroEdad.grid(row=4,column=1,padx=10,pady = 10)
+
+        cuadroEstado = tk.Entry(frame,textvariable=self.emp_estado)
+        cuadroEstado.grid(row=5,column=1,padx=10,pady = 10)
+
     def Salir(self):
         respuesta = mb.askyesno("Salir","Esta seguro de salir del sistema")
         if respuesta == True:
@@ -48,7 +76,8 @@ class Aplicacion:
                 emp_estado char(1) not null)
             ''')#se usa ''' para asegurar que sea cadena
         except sqlite3.OperationalError:
-            print("La tabla ya existe")
+            #print("La tabla ya existe")
+            mb.askokcancel("Advertencia","La tabla ya existe")
         else:
             print("La tabla empleado se a creado satisfactoriamente")
 
