@@ -39,8 +39,18 @@ class Aplicacion:
         self.menubar1.add_cascade(label="Operaciones",menu=self.operacionesMenu)#creo el menu archivo
     
     def formEmpleados(self):
-        frame = tk.Frame(self.ventana1)
+        #frame = tk.Frame(self.ventana1)
+        vempleado = tk.Toplevel(self.ventana1)
+        frame=tk.Frame(vempleado)
+        frame.config(bg="blue")
+
         frame.pack()
+
+        ##Formato formulario
+        mi_label = tk.Label(vempleado,text="empleado")
+        mi_label.pack(side=tk.LEFT)
+        mi_label.config(font=("Arial",14))
+        mi_label.config(fg="blue")
         self.emp_codigo = tk.StringVar()
         self.emp_nombres = tk.StringVar()
         self.emp_apellidos = tk.StringVar()
@@ -82,7 +92,7 @@ class Aplicacion:
         estadoLabel.grid(row=5,column=0)
 
         #botones
-        frame2 = tk.Frame(self.ventana1)
+        frame2 = tk.Frame(vempleado)
         frame2.pack()
         botonCreate=tk.Button(frame2,text="Agregar",command=self.agregaEmp)
         botonCreate.grid(row=0,column=0,padx=10,pady=10)
@@ -176,7 +186,7 @@ class Aplicacion:
         tk.messagebox.showinfo("Base de Datos", "Registro actualizado con exito")
         conexion.commit()
         conexion.close()
-        
+
     def eliminarEmp(self):
         conexion = sqlite3.connect('empleado.db')
         cursor = conexion.cursor()
