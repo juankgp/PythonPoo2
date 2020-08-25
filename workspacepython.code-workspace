@@ -3,9 +3,6 @@
 		{
 			"name": "poo2",
 			"path": "."
-		},
-		{
-			"path": "../Django/Proyectos"
 		}
 	],
 	"settings": {
