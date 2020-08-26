@@ -7,6 +7,7 @@
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "ejerciciosSql",
-		"git.ignoreLimitWarning": true
+		"git.ignoreLimitWarning": true,
+		"python.pythonPath": "/usr/local/bin/python3"
 	}
 }
