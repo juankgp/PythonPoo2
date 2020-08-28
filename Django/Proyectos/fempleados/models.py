@@ -20,7 +20,7 @@ class Prestamos(models.Model):
     fecha = models.DateField()
     valor = models.DecimalField(max_digits=3, decimal_places=2)
     plazo = models.CharField(max_length=25)
-    estado = models.BooleanField(default = True)
+    estado = models.BooleanField(default = False)
                 
     def __str__(self):
         return "{0} {1}".format(self.valor, self.plazo)
