@@ -1,5 +1,28 @@
 {% extends 'fempleados/base.html' %}
 
 {% block content %} 
+<h1><small>Lista de Empleados</small></h1>
+<div class="row"> 
+    <div class="table-responsive">
+        <table class="table">
+            <tr >
+                <td>Apellido</td>
+                <td>Nombres</td>
+                <td>Cedula</td>
+                <td>Fecha de Nacimiento</td>
+            </tr>
+            {% for empleados in object_list %}
+            <tr>
+                <td>{{ empleados.Apellido}}</td>
+                <td>{{ empleados.Nombres}}</td>
+                <td>{{ empleados.Cedula}}</td>
+                <td>{{ empleados.FechaNacimiento}}</td>
+                <td><a href="{% url 'empleados_view' empleados.id %}"><button type="button" class="btn btn-outline-primary">Ver</button></a></td>
+                <td><a href="#"><button type="button" class="btn btn-outline-danger">Eliminar</button></a></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
 
 {% endblock %}

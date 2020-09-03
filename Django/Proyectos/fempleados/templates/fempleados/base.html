@@ -23,7 +23,7 @@
          <div class="collapse navbar-collapse" id="navbarResponsive">
            <ul class="navbar-nav ml-auto">
              <li class="nav-item">
-               <a class="btn btn-outline-info btn-md" href="#">Boton</a>
+               <a class="btn btn-outline-info btn-md" href="{%url 'empleados_new'%}">Nuevo Empleado</a>
              </li>
            </ul>
          </div>
@@ -34,6 +34,9 @@
      <div class="container" id="app">
         
           <!-- Contenido de formularios -->  
+          {% block content %} 
+
+          {% endblock %}
         
      </div>
      <!-- /.container -->
