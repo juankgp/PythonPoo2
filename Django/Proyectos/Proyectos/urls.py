@@ -26,7 +26,7 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     #path('',include('holamundo.urls'))
     #path('',include('blog.urls'))
-    #path('',include('blog.urls'))
+    path('',include('blog.urls')),
     url(r'^admin/',admin.site.urls),
     url(r'^',include('fempleados.urls')),
    

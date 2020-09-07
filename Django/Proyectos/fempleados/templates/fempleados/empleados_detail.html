@@ -7,7 +7,7 @@
     <div>
         <ul>
             <li class="list-group-item"><strong>Nombres:</strong>{{object.Nombres}} </li>
-            <li class="list-group-item"><strong>Apellidos:</strong>{{object.Apelido}} </li>
+            <li class="list-group-item"><strong>Apellidos:</strong>{{object.Apellido}} </li>
             <li class="list-group-item"><strong>Cedula:</strong>{{object.Cedula}} </li>
             <li class="list-group-item"><strong>Fecha de Nacimiento:</strong>{{object.FechaNacimiento}} </li>
            
@@ -17,7 +17,8 @@
 </div>
 <div>
     <div>
-        <a href="#"><button type="button" class="btn btn-outline-secondary">Editar</button></a>
+        
+        <a href="{%url 'empleados_edit' object.id %}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
         <a href="{%url 'empleados_list' %}"><button type="button" class="btn btn-outline-dark">Regresar</button></a>
     </div>
 </div>
