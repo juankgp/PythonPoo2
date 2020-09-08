@@ -1,0 +1,23 @@
+{% extends 'fempleados/base.html' %}
+
+{% block content %} 
+
+<h1>
+    {% if request.path == '/new'%} Nuevo Empleado {%else%} Editar {%endif%} 
+</h1>
+<div>
+    <div>
+        <form method="POST" action="">
+            {%csrf_token%}
+            {%for field in form%}
+            <div>
+                {{field.label_tag}}
+                {{field}}
+            </div>
+            {%endfor%}
+            <br>
+            <input type="submit" {% if request.path == '/new'%} value = "Agregar" {%else%} value="Actualizar"{%endif%} class="btn btn-success">
+        </form>
+    </div>
+</div>
+{% endblock %}

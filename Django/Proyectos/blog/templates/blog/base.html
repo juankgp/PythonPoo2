@@ -16,9 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/galeria.css' %}">
 
     {% if title %}
-        <title>Django Blog - {{ title }}</title>
+        <title>Sistema de Prestamos - {{ title }}</title>
     {% else %}
-        <title>Django Blog</title>
+        <title>Sistema de Prestamos Blog</title>
     {% endif %}
 </head>
 <body>
@@ -43,7 +43,7 @@
             <h3>Opciones del Sistema</h3>
             <p class='text-muted'>Agencia de prestamos
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Registro de empleados</li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'empleados_list' %}">Registro de empleados</a> </li>
                 <li class="list-group-item list-group-item-light">Registro de Prestamos</li>
                 <li class="list-group-item list-group-item-light">Registro de Departamentos</li>
                 <li class="list-group-item list-group-item-light">etc</li>
@@ -52,6 +52,7 @@
           </div>
         </div>
       </div>
+      <a class="btn btn-success" class="nav-item nav-link" href="/logout">Cerrar Sesion</a>
     </main>
 
     <!-- Optional JavaScript -->
@@ -59,7 +60,7 @@
     
     <script>
        function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("mySidenav").style.width = "250px";
         }
 
         function closeNav() {

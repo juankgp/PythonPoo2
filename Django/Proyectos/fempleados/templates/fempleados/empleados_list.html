@@ -18,6 +18,7 @@
                 <td>{{ empleados.Cedula}}</td>
                 <td>{{ empleados.FechaNacimiento}}</td>
                 <td><a href="{% url 'empleados_view' empleados.id %}"><button type="button" class="btn btn-outline-primary">Ver</button></a></td>
+                <td><a href="{% url 'empleados_delete' empleados.id %}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                 <td><a href="#"><button type="button" class="btn btn-outline-danger">Eliminar</button></a></td>
             </tr>
             {%endfor%}

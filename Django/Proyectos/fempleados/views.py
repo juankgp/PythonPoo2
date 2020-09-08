@@ -12,6 +12,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 #Clases
 from .forms import EmpleadosForm
 from .models import Empleados
+#template 
+from django.views.generic import TemplateView
 
 class EmpleadosList(ListView):
     model = Empleados
@@ -36,5 +38,14 @@ class EmpleadosDelete(SuccessMessageMixin,DeleteView):
     success_url = reverse_lazy('empleados_list')
     succes_message = "Empleado borrado con Exito"    
 
+#Guardar y Editar
+def empleados_new(request):
+    form = EmpleadosForm()
+    return render (request, 'empleados/empleados_list.html',{'form':form})
 
-# Create your views here.
+class BlogDetailsPageView(TemplateView):
+    template_name='blog/base.html'
+
+class UserDetailsPageView(TemplateView):
+    template_name='users/login.html'
+

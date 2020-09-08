@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'holamundo',
     'fempleados',
     'blog',
+    'users',
 ]
 
 MIDDLEWARE = [
