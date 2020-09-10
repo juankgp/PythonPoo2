@@ -7,9 +7,6 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth import logout as do_logout
 
-
-
-
 def welcome(request):
     # Si estamos identificados devolvemos la portada
     if request.user.is_authenticated:
