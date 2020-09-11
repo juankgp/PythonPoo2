@@ -6,6 +6,7 @@ class Empleados(models.Model):
     Nombres = models.CharField( max_length=25)
     Cedula = models.CharField(max_length=14)
     FechaNacimiento = models.DateField()
+    Estado = models.BooleanField(default=True)
     
     def NombreCompleto(self):
         cadena = "{0} {1}, {2}"

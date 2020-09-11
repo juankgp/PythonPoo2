@@ -16,6 +16,9 @@ class EmpleadosForm(forms.ModelForm):
         self.fields['FechaNacimiento'].widget.attrs={
             'class': 'form-control col-md-6'
         }
+        self.fields['Estado'].widget.attrs={
+            'class': 'form-control col-md-6'
+        }
     class Meta:
         model = Empleados
-        fields=('Apellido','Nombres','Cedula','FechaNacimiento')
+        fields=('Apellido','Nombres','Cedula','FechaNacimiento','Estado')
