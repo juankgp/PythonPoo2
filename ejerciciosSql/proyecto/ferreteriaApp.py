@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox as mb
 from functools import partial
+from consultaPiezas import *
+from consultaProveedor import *
+from consultaInventario import *
 import sqlite3
 import sys
 
@@ -8,7 +11,7 @@ import sys
 class Aplicacion:
     def __init__(self):
         self.ventana1 = tk.Tk()
-        self.ventana1.geometry('800x700')
+        self.ventana1.geometry('400x350')
         self.ventana1.title("Mi Ferretería")
         imagen = tk.PhotoImage(file="toolbox.png")
         tk.Label(self.ventana1,image=imagen,bd=0,width=380 , height =350).pack(side="top")
@@ -31,6 +34,9 @@ class Aplicacion:
         self.sistemaM.add_command(labe="Ingreso de Piezas",command=self.formPiezas)
         self.sistemaM.add_command(labe="Ingreso de Proveedores",command=self.formProve)
         self.sistemaM.add_command(labe="Ingreso a Inventario",command=self.formInv)
+        self.sistemaM.add_command(label="Consulta Piezas",command=ventanaReporte)
+        self.sistemaM.add_command(label="Consulta Proveedores",command=ventanaProveedor)
+        self.sistemaM.add_command(label="Consulta Inventario",command=ventanaInventario)
         self.sistemaM.add_command(labe="Limpiar Campos",command=self.limpiarCampos)
         #############Operaciones##############3
         self.operacionesMenu = tk.Menu(self.menubar1,tearoff = 0)
@@ -396,6 +402,7 @@ class Aplicacion:
             tk.messagebox.showinfo("Base de Datos", "Registro insertado con exito")
         conexion.commit()
         conexion.close()
+
     def consultarSumi(self):
         conexion = sqlite3.connect("piezas.db")
         cursor = conexion.cursor()
