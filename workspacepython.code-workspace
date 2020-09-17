@@ -3,6 +3,9 @@
 		{
 			"name": "poo2",
 			"path": "."
+		},
+		{
+			"path": "../../pygames"
 		}
 	],
 	"settings": {
