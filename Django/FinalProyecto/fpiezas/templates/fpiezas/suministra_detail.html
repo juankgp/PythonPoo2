@@ -1,0 +1,25 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content %} 
+
+<h1><small>Detalle de Stock</small></h1>
+<div class="row">
+    <div>
+        <ul>
+            <li class="list-group-item"><strong>Precio:</strong>{{object.Precio}} </li>
+            <li class="list-group-item"><strong>Id Pieza:</strong>{{object.Pieza_cod}}} </li>
+            <li class="list-group-item"><strong>Id Proveedor:</strong>{{object.Proveedor_cod}} </li>
+            
+           
+        </ul>
+        
+    </div>
+</div>
+<div>
+    <div>
+        
+        <a href="{%url 'suministra_edit' object.id %}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
+        <a href="{%url 'suministra_list' %}"><button type="button" class="btn btn-outline-dark">Regresar</button></a>
+    </div>
+</div>
+{% endblock %}

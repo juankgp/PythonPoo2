@@ -1,0 +1,31 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content  %} 
+<h1><small>Lista de Piezas</small></h1>
+<div class="row"> 
+    <div class="table-responsive">
+        <table class="table">
+            <tr >
+                <td>Nombre</td>
+                <td>Descripción</td>
+                <td>Tipo</td>
+                
+            </tr>
+            {% for piezas in object_list %}
+            <tr>
+                <td>{{ piezas.Nombre}}</td>
+                <td>{{ piezas.Descripcion}}</td>
+                <td>{{ piezas.Tipo}}</td>
+                
+                <td><a href="{% url 'piezas_view' piezas.id %}"><button type="button" class="btn btn-outline-primary">Ver</button></a></td>
+                <td><a href="{% url 'piezas_delete' piezas.id %}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+                
+            </tr>
+            {%endfor%}
+        </table>
+        <a class="btn btn-outline-info btn-md" href="{%url 'piezas_new' %}">Nueva Pieza</a>
+    </div>
+</div>
+
+
+{% endblock  %}

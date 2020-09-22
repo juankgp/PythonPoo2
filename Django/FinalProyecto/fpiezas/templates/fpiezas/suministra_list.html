@@ -1,0 +1,30 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content  %} 
+<h1><small>Lista de Stock</small></h1>
+<div class="row"> 
+    <div class="table-responsive">
+        <table class="table">
+            <tr >
+                <td>Precio</td>
+                <td>Id Pieza</td>
+                <td>Id Proveedor</td>
+                
+            </tr>
+            {% for suministra in object_list %}
+            <tr>
+                <td>{{ suministra.Precio}}</td>
+                <td>{{ suministra.Pieza_cod}}</td>
+                <td>{{ suministra.Proveedor_cod}}</td>
+                
+                <td><a href="{% url 'suministra_view' suministra.id %}"><button type="button" class="btn btn-outline-primary">Ver</button></a></td>
+                <td><a href="{% url 'suministra_delete' suministra.id %}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        <a class="btn btn-outline-info btn-md" href="{%url 'suministra_new' %}">Nuevo Registro</a>
+    </div>
+</div>
+
+
+{% endblock  %}

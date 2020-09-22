@@ -1,0 +1,25 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content %} 
+
+<h1><small>Detalle de Pieza</small></h1>
+<div class="row">
+    <div>
+        <ul>
+            <li class="list-group-item"><strong>Nombre:</strong>{{object.Nombre}} </li>
+            <li class="list-group-item"><strong>Descripcion:</strong>{{object.Descripcion}} </li>
+            <li class="list-group-item"><strong>Tipo:</strong>{{object.Tipo}} </li>
+            
+           
+        </ul>
+        
+    </div>
+</div>
+<div>
+    <div>
+        
+        <a href="{%url 'piezas_edit' object.id %}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
+        <a href="{%url 'piezas_list' %}"><button type="button" class="btn btn-outline-dark">Regresar</button></a>
+    </div>
+</div>
+{% endblock %}

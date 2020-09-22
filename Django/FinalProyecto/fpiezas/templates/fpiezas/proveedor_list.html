@@ -1,0 +1,31 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content %} 
+
+<h1><small>Lista de Proveedores</small></h1>
+<div class="row"> 
+    <div class="table-responsive">
+        <table class="table">
+            <tr >
+                <td>Nombre</td>
+                <td>Direccion</td>
+                <td>Credito</td>
+                
+            </tr>
+            {% for proveedor in object_list %}
+            <tr>
+                <td>{{ proveedor.Nombre}}</td>
+                <td>{{ proveedor.Direccion}}</td>
+                <td>{{ proveedor.Credito}}</td>
+                
+                <td><a href="{% url 'proveedor_view' proveedor.id %}"><button type="button" class="btn btn-outline-primary">Ver</button></a></td>
+                <td><a href="{% url 'proveedor_delete' proveedor.id %}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+                
+            </tr>
+            {%endfor%}
+        </table>
+        <a class="btn btn-outline-info btn-md" href="{%url 'proveedor_new' %}">Nuevo Proveedor</a> 
+    </div>
+</div>
+
+{% endblock %}

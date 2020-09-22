@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet"  href="{% static 'blog/galeria.css' %}">
+
+    {% if title %}
+        <title>Sistema de PrestamosJuank - {{ title }}</title>
+    {% else %}
+        <title>Ferreteria JK</title>
+    {% endif %}
+
+    <style>
+    .slider{
+    width: 100%;
+    margin: 0% 40% ;
+    overflow: hidden;
+    }
+    .slider ul{
+    width: 400%;
+    display: flex;
+    padding: 0;
+
+    animation: cambio 10s infinite alternate;
+    animation-timing-function: steps(4);
+    }
+
+  .slider li{
+    width: 100%;
+    list-style: none;
+  }
+
+.slider img{
+    width: 30%;
+   
+}
+
+@keyframes cambio{
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+    
+}
+
+    </style>
+ 
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{% url 'blogDetails' %}">Inicio</a>
+    <a href="{% url 'piezas_list' %}">Registro de Piezas</a>
+    <a href="{% url 'proveedor_list' %}">Registro de Proveedores</a>
+    <a href="{% url 'suministra_list' %}">Registro de Stock</a>
+    <a href="/logout">Cerrar Sesión</a>
+  </div>
+  <span style=" color: aliceblue; font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menú</span>
+  
+  <!--<a class="btn btn-success" class="nav-item nav-link" href="/logout">Cerrar Sesion</a>-->
+  
+    <main role="main" class="container">
+     
+      <div class="row">
+        <div class="col-md-5">
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <img src="{% static 'blog/logo1.png' %}" alt="">
+            <h3>Inventario del Sistema</h3>
+            <p class='text-muted'>FERRETERIA JK
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a href="{% url 'piezas_list' %}">Registro de Piezas</a> </li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'proveedor_list' %}">Registro de Proveedores</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'suministra_list' %}">Registro de Stock</a></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    
+    <div class="slider">
+      <ul >
+          <li><img src="{% static 'blog/11.jpg' %}" alt=""></li>
+          <li><img src="{% static 'blog/12.jpg' %}" alt=""></li>
+          <li><img src="{% static 'blog/13.jpg' %}" alt=""></li>
+          <li><img src="{% static 'blog/15.jpg' %}" alt=""></li>
+      </ul>
+    </div>
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+   
+
+</body>
+<script>
+  function openNav() {
+     document.getElementById("mySidenav").style.width = "250px";
+   }
+
+   function closeNav() {
+       document.getElementById("mySidenav").style.width = "0";
+   }
+
+</script>
+</html>

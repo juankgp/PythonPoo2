@@ -1,0 +1,12 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content %} 
+
+<h1><small>Formulario de Proveedores</small></h1>
+<form action="" method="POST" class="post-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}

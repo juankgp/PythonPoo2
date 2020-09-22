@@ -1,0 +1,19 @@
+{% extends 'fpiezas/base.html' %}
+
+{% block content %} 
+
+<h1><small>Eliminar Registros</small></h1>
+<div class="row">
+    <div>
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="alert alert-warning" role="alert">
+                Esta seguro de eliminar el {{object}} ?
+            </div>
+            <input type="submit" class="btn btn-info" value="Si, desea eliminar">
+            <a class="btn btn-succes" href="{% url 'piezas_list' %}">No Eliminar</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
