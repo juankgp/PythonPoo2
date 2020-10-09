@@ -1,0 +1,47 @@
+{% extends 'matriculas/base.html' %}
+
+{% block content %}
+
+<h1 class="my-4">
+    <small>Matriculas Realizadas</small>
+</h1>
+
+<div class="row">
+<div class="table-responsive" style="overflow-x: scroll">
+    <table width="200" border="1" class="table">
+  
+        <tr>
+        <td >Estudiante</td>
+        <td >Carrera</td>
+        <td >Semestre</td>
+        <td >Fecha</td>
+        <td >Costo</td>
+        <td >Paralelo</td>
+        <td >Nota Semestre Anterior</td>
+      </tr>
+  
+  
+      {% for matriculas in object_list %}
+      <tr>
+        <td>{{ matriculas.Estudiante }}</td>
+        <td>{{ matriculas.Carrera }}</td>
+        <td>{{ matriculas.Semestre }}</td>
+        <td>{{ matriculas.Fecha }}</td>
+        <td>{{ matriculas.Costo }}</td>
+        <td>{{ matriculas.Paralelo }}</td>
+        <td>{{ matriculas.NotaSemAnt }}</td>
+        <td><a href="{% url 'matriculas_view' matriculas.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td> 
+        <td><a href="{% url 'matriculas_delete' matriculas.id %}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a></td> 
+
+
+    </tr>
+
+      
+
+     {% endfor %} 
+  
+    </table>
+</div>
+</div>
+   
+{% endblock %}

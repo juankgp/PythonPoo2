@@ -102,7 +102,7 @@ class SuministraDelete(SuccessMessageMixin,DeleteView):
 #Guardar y Editar
 def suministra_new(request):
     form = SuministraForm()
-    return render (request, 'piezas/suministra_list.html',{'form':form})
+    return render (request, 'piezas/suministra_listPregunta.html',{'form':form})
 
 
 

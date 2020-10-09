@@ -1,0 +1,24 @@
+
+{% extends 'matriculas/base.html' %}
+
+{% block content %}
+
+<h1 class="my-4">Delete -
+    <small>{{ object }}</small>
+</h1>
+
+<div class="row">
+    <div >
+        <form method="post">
+            {% csrf_token %}
+            <div class="alert alert-warning" role="alert">
+              Esta seguro de eliminar la especialidad {{ object.Estudiante }} ?
+            </div>
+            <input type="submit" class="btn btn-info" value="Si, Desea eliminar?" />
+            <a class="btn btn-success" href="{% url 'matriculas_list' %}">No Elimine</a>
+        </form>
+    </div>
+</div>
+
+   
+{% endblock %}

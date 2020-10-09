@@ -1,0 +1,27 @@
+{% extends 'matriculas/base.html' %}
+
+{% block content %}
+<h1 class="my-4">Detalle de Matriculas
+    <small>{{ object.name }}</small>
+</h1>
+<div class="row">
+    <div >
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Nombre:</strong> {{ object.Estudiante }}</li>
+          <li class="list-group-item"><strong>Carrera:</strong> {{ object.Carrera }}</li>
+          <li class="list-group-item"><strong>Semestre:</strong> {{ object.Semestre }}</li>
+          <li class="list-group-item"><strong>Fecha:</strong> {{ object.Fecha}}</li>
+          <li class="list-group-item"><strong>Costo:</strong> {{ object.Costo}}</li>
+          <li class="list-group-item"><strong>Paralelo:</strong> {{ object.Paralelo}}</li>
+          <li class="list-group-item"><strong>Nota Semestre anterior:</strong> {{ object.NotaSemAnt}}</li>
+        </ul>
+    </div>
+</div>
+
+<div >
+    <div >
+            <a href="{% url 'matriculas_edit' object.id %}"><button type="button" class="btn btn-success">Editar</button></a>
+            <a href="{% url 'matriculas_list' %}"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    </div>
+</div>
+{% endblock %}

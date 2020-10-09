@@ -1,0 +1,75 @@
+ <!-- Formato de formularios    estilos : https://getbootstrap.com/docs/3.4/css/#buttons-->
+ {% load static %}
+ <!DOCTYPE html>
+ <html lang="en">
+   <head> 
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <title>Titulo</title>
+     <!-- colocar estilos Bootstrap core CSS -->
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+     
+     {# Cargamos la librería #}
+     {% load bootstrap4 %}
+ 
+     {# CSS Bootstrap #}
+     {% bootstrap_css %} 
+ 
+     {# Archivos #}
+     {% load static %}
+
+   </head>
+   <body>
+    
+   
+
+     <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+         <a class="navbar-brand" href="/">Titulo de la aplicacion1</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+               <a class="btn btn-outline-info btn-md" href="{% url 'matriculas_new' %}">+ Nuevo</a>
+             </li>
+           </ul>
+         </div>
+       </div>
+     </nav>
+
+       <!--3- Colocar menu hacia la izquierda -->
+     <div class="row mb-5">
+
+      <div class="card col-md-2">
+        <h6 class="mt-4"><strong>Menú</strong></h6> 
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href="#" type="button" class="btn-outline-primary ">Dashboard</a></li>
+          
+          <li class="list-group-item active">Matrículas</li>
+          <li class="list-group-item active">Estudiantes</li>
+
+          <li class="list-group-item">Configuración</li>
+        </ul>
+      </div>
+    
+
+ 
+     <!-- Page Content -->
+     <div class="container" id="app">
+        
+          <!-- Contenido de formularios -->  
+          {% block content %}
+          {% endblock %}
+        
+     </div>
+     <!-- /.container -->
+ 
+     <!-- Bootstrap core JavaScript -->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   </body>
+ </html>
