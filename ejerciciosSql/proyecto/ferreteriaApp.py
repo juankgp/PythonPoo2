@@ -264,7 +264,7 @@ class Aplicacion:
             self.pro_direccion.set(e[2])
             self.pro_credito.set(e[3])
             
-        conexion.commit()
+        conexion.commit()agregar_menu
         conexion.close()
     def actualizarProve(self):
         conexion = sqlite3.connect('piezas.db')
