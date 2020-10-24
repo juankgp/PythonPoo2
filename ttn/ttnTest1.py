@@ -1,6 +1,7 @@
 import time
 import ttn
 
+
 app_id = "wisnodearduino1"
 access_key = "ttn-account-v2.QAT09KX6NTZPal64F1iwMQvTB5kHgQj__nP0etRhSek"
 dev_id = "wisnode1"

@@ -6,10 +6,14 @@
 		},
 		{
 			"path": "../../pygames"
+		},
+		{
+			"name": "ESP32MQTTeso",
+			"path": "../../Documents/PlatformIO/Projects/ESP32MQTTeso"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "ejerciciosSql",
+		"liveServer.settings.multiRootWorkspaceName": "poo2",
 		"git.ignoreLimitWarning": true,
 		"python.pythonPath": "/usr/local/bin/python3"
 	}
